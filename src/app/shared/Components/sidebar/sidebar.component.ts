@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GifsService } from '../../../gifs/services/gifs.service';
 
 @Component({
   selector: 'shared-sidebar',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
 
 export class SidebarComponent {
 
-  //private service gifsService
+  constructor( private gifsService: GifsService ) { }
+
+  get tags() {
+    return this.gifsService.tagsHistory;
+  }
+
 }
